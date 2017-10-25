@@ -10,6 +10,7 @@
   "license": "ISC",
   "dependencies": {
     "express": "^4.16.2",
-    "mongoose": "^4.12.4"
+    "mongoose": "^4.12.4",
+    "passport-google-oauth20": "^1.0.0"
   }
 }
