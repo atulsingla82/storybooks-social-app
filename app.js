@@ -1,9 +1,16 @@
 const express = require('express');
 const mongoose = require('mongoose');
-
+const passport = require('passport');
 const app = express();
 
-const port = process.env.PORT || 5000;
+//load passport
+require('./config/passport')(passport) 
+
+//load routes
+const auth = require('./routes/auth');
+
+//use routes
+app.use('/auth' , auth);
 
 app.get('/' , (req, res) => {
   
@@ -11,6 +18,7 @@ app.get('/' , (req, res) => {
 
 })
 
+const port = process.env.PORT || 5000;
 
 
 app.listen(port , () => {
